@@ -13,9 +13,9 @@ function createPokemonCard(pokemon){
     document.body.appendChild(card); 
 }; 
 
-const fetchpokemon = async () => {
+const fetchpokemon = async (name) => {
     try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon");
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon") + name;
         const { results } = await response.json();
         console.log(results);
         results.forEach(element => {
